@@ -1,27 +1,20 @@
-image: alpine
+image: docker:latest
 
+# When using dind, it's wise to use the overlayfs driver for
+# improved performance.
 variables:
-  HUGO_VERSION: '0.22'
-  HUGO_SHA: 'c92b3e09ba95b08a32ec7c432f672e589f95775aa27eb92bc73744afcf8eefa5'
+  DOCKER_DRIVER: overlay
+  IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+services:
+- docker:dind
 
 before_script:
-  - apk update && apk add openssl ca-certificates
-  - wget -O ${HUGO_VERSION}.tar.gz https://github.com/spf13/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
-  - echo "${HUGO_SHA}  ${HUGO_VERSION}.tar.gz" | sha256sum -c
-  - tar xf ${HUGO_VERSION}.tar.gz && mv hugo* /usr/bin/hugo
-  - hugo version
+  - docker info
+  - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
 
-test:
+build:
+  stage: build
   script:
-  - hugo
-  except:
-  - master
-
-pages:
-  script:
-  - hugo
-  artifacts:
-    paths:
-    - public
-  only:
-  - master
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
