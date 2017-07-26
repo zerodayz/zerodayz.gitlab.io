@@ -10,7 +10,4 @@ RUN set -x && \
   echo "${HUGO_SHA}  ${HUGO_VERSION}.tar.gz" | sha256sum -c && \
   tar xf ${HUGO_VERSION}.tar.gz && mv hugo* /usr/bin/hugo && \
   rm -r ${HUGO_VERSION}.tar.gz && \
-  rm /var/cache/apk/* && \
-  which hugo
-
-ENTRYPOINT ["/usr/bin/hugo"]
+  rm /var/cache/apk/*
