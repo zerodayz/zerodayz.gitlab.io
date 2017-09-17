@@ -3,11 +3,16 @@ image: docker:latest
 # When using dind, it's wise to use the overlayfs driver for
 # improved performance.
 variables:
-  DOCKER_DRIVER: overlay
+  DOCKER_DRIVER: overlay 
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+  IMAGE_LATEST: $CI_REGISTRY_IMAGE:latest
 
 services:
 - docker:dind
+
+stages:
+  - build
+  - deploy
 
 before_script:
   - docker info
@@ -17,4 +22,12 @@ build:
   stage: build
   script:
     - docker build -t $IMAGE_TAG .
-    - docker push $IMAGE_TAG
+
+deploy:
+  stage: deploy
+  script:
+    - docker build -t $IMAGE_TAG -t $IMAGE_LATEST .
+    - docker push $CI_REGISTRY_IMAGE
+  only:
+    - tags
+
