@@ -81,7 +81,7 @@ for index, line in enumerate(dockerfile):
         dockerfile[index] = "ENV HUGO_SHA %s"%checksum
 
 # Update Dockerfile on repository
-rupdate = requests.put('%s/projects/%s/repository/files/Dockerfile?branch=registry&author_name=Update%%20script&content=%s&commit_message=%s&encoding=base64'%(
+rupdate = requests.put('%s/projects/%s/repository/files/Dockerfile?branch=registry&content=%s&commit_message=%s&encoding=base64'%(
     GITLAB_URL,
     GITLAB_PROJECT,
     quote(base64.b64encode("\n".join(dockerfile).encode()), safe=''),
