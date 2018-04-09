@@ -39,6 +39,7 @@ update:
   image: python:3.6
   before_script: []
   script:
-    - ./update.py $API_TOKEN $PROJECT
+    - pip install requests
+    - ./update.py $API_TOKEN $CI_PROJECT_PATH
   only:
     - schedules
