@@ -69,7 +69,7 @@ for asset in release['assets']:
 rdockerfile = requests.get('%s/projects/%s/repository/files/Dockerfile/raw?ref=registry'%(GITLAB_URL, GITLAB_PROJECT))
 if rdockerfile.status_code != 200:
     print('Failed to get Dockerfile from %s:'%sys.argv[1])
-    print(rdockerfile.json())
+    print(rdockerfile.text)
     exit(1)
 dockerfile = rdockerfile.text.split("\n")
 
@@ -81,29 +81,34 @@ for index, line in enumerate(dockerfile):
         dockerfile[index] = "ENV HUGO_SHA %s"%checksum
 
 # Update Dockerfile on repository
-rupdate = requests.put('%s/projects/%s/repository/files/Dockerfile?branch=registry&content=%s&commit_message=%s&encoding=base64'%(
+requestData = {
+        'branch': 'registry',
+        'content': "\n".join(dockerfile),
+        'commit_message': COMMIT_MESSAGE%(release['name'][1:]),
+}
+rupdate = requests.put('%s/projects/%s/repository/files/Dockerfile'%(
     GITLAB_URL,
     GITLAB_PROJECT,
-    quote(base64.b64encode("\n".join(dockerfile).encode()), safe=''),
-    quote(COMMIT_MESSAGE%(release['name'][1:]), safe='')
-), headers={'Private-Token': GITLAB_TOKEN})
+), data=requestData, headers={'Private-Token': GITLAB_TOKEN})
 if rupdate.status_code != 200:
     print("Failed to update Dockerfile:")
-    print(rupdate.json())
+    print(rupdate.text)
     exit(1)
 print('Dockerfile was updated to version %s'%release['name'][1:])
 
 # Create new tag
-rtag = requests.post('%s/projects/%s/repository/tags?tag_name=%s&ref=registry&message=%s&release_description=%s'%(
+requestData = {
+        'tag_name': release['name'][1:],
+        'ref': 'registry',
+        'message': COMMIT_MESSAGE%(release['name'][1:]),
+        'release_description': release['body'],
+}
+rtag = requests.post('%s/projects/%s/repository/tags'%(
     GITLAB_URL,
-    GITLAB_PROJECT,
-    release['name'][1:],
-    quote(COMMIT_MESSAGE%(release['name'][1:]), safe=''),
-    quote(release['body'], safe='')
-), headers={'Private-Token': GITLAB_TOKEN})
+    GITLAB_PROJECT), data=requestData, headers={'Private-Token': GITLAB_TOKEN})
 if rtag.status_code != 201:
     print('Failed to create tag:')
-    print(rtag.json())
+    print(rtag.text)
     exit(0)
 print('Tag %s created'%release['name'][1:])
 print('Done !')
