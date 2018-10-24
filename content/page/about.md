@@ -5,5 +5,6 @@ comments: false
 ---
 
 My name is Robin Černín and I live and work currently in Brisbane, Australia.  
+
 My career has been previously focused on Information Security.
-I am currently working as Software Maintenance Engineer in Red Hat with Cloud Computing software OpenStack.
+I am currently working as Software Maintenance Engineer in [Red Hat](https://www.redhat.com/) with Cloud Computing software [OpenStack](https://www.openstack.org/).
