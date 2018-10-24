@@ -2,7 +2,7 @@ baseurl = "https://zerodayz.gitlab.io"
 contentdir    = "content"
 layoutdir     = "layouts"
 publishdir    = "public"
-title = "The PC Guy"
+title = "The Zerodayz Guy"
 canonifyurls  = true
 
 DefaultContentLanguage = "en"
