@@ -1,5 +1,5 @@
 ---
-title: Pristimanis
+title: Codename pristimanis
 date: 2018-10-25
 tags: ["pristimantis", "code", "citellus"]
 ---
@@ -22,7 +22,7 @@ tripleo-ansible-inventory --static-inventory inventory
 ansible overcloud -m ping  -u heat-admin
 ```
 
-## Example of collecting sosreports from Overcloud nodes:
+## Example of collecting sosreports:
 
 ```bash
 ansible-playbook -i inventory tasks/collect-sosreport.yaml -e case_id=12345 -e only_plugins=system -e hosts=overcloud
