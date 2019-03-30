@@ -32,7 +32,9 @@ mylist = [10, 15, 11, 5, 20]
 k = 30
 ```
 
-However I wanted to see how fast this code works, I have added additional code with `time.time()` and measured time:
+However I wanted to see how fast this code works, I have added additional code with `time.time()` and measured time.
+
+## Measuring time with time.time()
 
 ```bash
 def double_for_loop(l, n):
@@ -50,7 +52,9 @@ def double_for_loop(l, n):
                 return True, l[i], l[j]
 ```
 
-Apparently with small `list` like this, the code is pretty fast, so I needed to write code to generate my own `list` of `n` elements:
+Apparently with small `list` like this, the code is pretty fast, so I needed to write code to generate my own `list` of `n` elements.
+
+## Generating input
 
 ```bash
 n = 100000
@@ -78,11 +82,13 @@ double_for_loop: Found  7462  and  376  adds up to  7838
 
 Since I am curious person I started to slowly increase the `n` number of elements in the list up to `10 millions` and eventually run into issues where my laptop got stuck and I had to reboot.
 
-This is where I started to look for better method solving this problem and I have found it. The answer was `Algorithms`!!
+This is where I started to look for better method solving this problem.
 
-I found efficient algorithm that could do a job that took previously minutes into few seconds on `list` with millions and millions of elements. Eventually I run into problem generating huge `list` of elements but that is another problem.
+I found efficient `algorithm` that could do a job that took previously minutes into few seconds on `list` with millions and millions of elements. Eventually I run into problem generating huge `list` of elements but that is another problem.
 
-My implementation of `Binary search` algorithm is here:
+My implementation of `Binary search` algorithm is here.
+
+## Binary search
 
 ```bash
 def binary_search(l,n):
@@ -102,6 +108,6 @@ def binary_search(l,n):
     return False
 ```
 
-Based on this experience I have decided to enroll in `Data Structures and Algorithms` course which I believe is benefical for everyone who really care about good coding.
+Based on this experience I have decided to enroll in [Data Structures and Algorithms](https://classroom.udacity.com/courses/ud513/) course which I believe is benefical for everyone who really care about good coding.
 
 The full source code can be found [here](https://gitlab.com/zerodayz/dailycoding/blob/master/Feb27_2019.py)
