@@ -84,7 +84,11 @@ Since I am curious person I started to slowly increase the `n` number of element
 
 This is where I started to look for better method solving this problem.
 
-I found efficient `algorithm` that could do a job that took previously minutes into few seconds on `list` with millions and millions of elements. Eventually I run into problem generating huge `list` of elements but that is another problem.
+I found efficient `algorithm` that could do a job that took previously minutes into few seconds on `list` with millions and millions of elements. The only requirement is that this is `sorted list`. That's the reason I have added.
+
+```bash
+    sortedrandomlist = sorted(randomlist)
+```
 
 My implementation of `Binary search` algorithm is here.
 
@@ -107,6 +111,8 @@ def binary_search(l,n):
             low_val_index += 1
     return False
 ```
+
+Eventually I run into problem generating huge `list` of elements but that is another problem.
 
 Based on this experience I have decided to enroll in [Data Structures and Algorithms](https://classroom.udacity.com/courses/ud513/) course which I believe is benefical for everyone who really care about good coding.
 
