@@ -4,11 +4,11 @@ date: 2019-03-20
 tags: ["python", "code"]
 ---
 
-Some time ago I have started to do Python coding and subscribed myself to [Dailycoding](https://www.dailycodingproblem.com) to improve my Python skills. It works the way that they send you a coding problem each day that you can solve.
+Recently I have started to study Python coding and subscribed myself to [Dailycoding](https://www.dailycodingproblem.com) to improve my Python skills. It works the way that they send you a coding problem each day that you can solve.
 
-First day I have received a coding problem [Feb27_2019.py](https://gitlab.com/zerodayz/dailycoding/blob/master/Feb27_2019.py) that gives you `list of integers` and number `k` as an input. You need to find whether any two numbers from the `list` adds up to `k`.
+First day I have received a coding problem [Feb27_2019.py](https://gitlab.com/zerodayz/dailycoding/blob/master/Feb27_2019.py) that gives you a `list of integers` and number `k` as an input. You need to find whether any two numbers from the `list` add up to `k`.
 
-The first solution that came to my mind was using `double for-loop`, basically iterate over each element in the given `list` and try to `sum` the two values to see if they adds up to `k`:
+The first solution that came to my mind was using `double for-loop`, which iterates over each element in the given `list` and tries to `sum` the two values to see if they add up to `k`:
 
 ## Double for-loop
 
@@ -52,7 +52,7 @@ def double_for_loop(l, n):
                 return True, l[i], l[j]
 ```
 
-Apparently with small `list` like this, the code is pretty fast, so I needed to write code to generate my own `list` of `n` elements.
+Apparently with a small `list` like this, the code is pretty fast, so I needed to write code to generate my own `list` of `n` elements.
 
 ## Generating input
 
@@ -72,7 +72,7 @@ def generate_input(n):
     return randomnumber, randomlist, sortedrandomlist
 ```
 
-With all the `print` statement it shows that processing took:
+This `print` statement shows that processing took `0.3900914192199707` seconds:
 
 ```bash
 Searching for two numbers using double for-loop method that adds up to  7838  within  100000 items.
@@ -80,11 +80,11 @@ Elapsed time:  0.3900914192199707
 double_for_loop: Found  7462  and  376  adds up to  7838
 ```
 
-Since I am curious person I started to slowly increase the `n` number of elements in the list up to `10 millions` and eventually run into issues where my laptop got stuck and I had to reboot.
+Out of curiosity I started to slowly increase the `n` number of elements in the `list` up to `10 millions` and eventually run into issues where my laptop got stuck and I had to reboot.
 
-This is where I started to look for better method solving this problem.
+This is where I started to look for a better method to solve this problem.
 
-I found efficient `algorithm` that could do a job that took previously minutes into few seconds on `list` with millions and millions of elements. The only requirement is that this is `sorted list`. That's the reason I have added.
+I found an efficient `algorithm` that could do the job that took previously minutes in a matter of a few seconds on the `list` with millions and millions of elements. The only requirement is that it has to be `sorted list`. That's the reason I have added.
 
 ```bash
     sortedrandomlist = sorted(randomlist)
