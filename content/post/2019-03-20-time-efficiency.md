@@ -72,7 +72,7 @@ def generate_input(n):
     return randomnumber, randomlist, sortedrandomlist
 ```
 
-With all the `print` statement it showes that processing took:
+With all the `print` statement it shows that processing took:
 
 ```bash
 Searching for two numbers using double for-loop method that adds up to  7838  within  100000 items.
