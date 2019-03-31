@@ -15,7 +15,7 @@ pygmentCodeFences = true
 
 [Params]
   subtitle = "My Personal Blog"
-  logo = "img/avatar-icon.png"
+  logo = "img/rc-logo.png"
   favicon = "img/favicon.ico"
   dateFormat = "January 2, 2006"
   commit = false
