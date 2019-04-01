@@ -1,12 +1,14 @@
 ---
-title: New logo and cats
+title: New logo
 date: 2019-04-01
-image: /img/avatar-icon.png
 tags: ["cats", "logo", "illustration"]
 ---
 
-My blog has new logo!
+I like to draw from time to time and this time I have decided to create new logo for my website.
+The logo represents letter `R` as initial of my first name `Robin` I agree that it may look like `K` but let me assure you that it isn't.
 
-And here is picture of cats
+![New logo](avatar-icon.png){ height=25% }
+
+Also because everyone lovesa `cats`, here is one picture of my favourite cat in different positions.
 
 
