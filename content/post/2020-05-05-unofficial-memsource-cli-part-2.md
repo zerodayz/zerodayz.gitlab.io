@@ -8,7 +8,8 @@ It has been 7 months+ that Memsource CLI has been developed and it is still Rock
 
 Here is our new project logo:
 
-<img src="https://zerodayz.gitlab.io/img/memsource-logo.png">
+<a href="https://zerodayz.gitlab.io/img/memsource-logo.png"><img src="https://zerodayz.gitlab.io/img/memsource-logo.png" width="605" height="454"></a>
+
 
 It has been a while since we had last issue reported and that's definitely great sign.  
 Now even the Memsource official blog mentions Memsource CLI [https://www.memsource.com/blog/2019/11/07/unofficial-memsource-cli](https://www.memsource.com/blog/2019/11/07/unofficial-memsource-cli)
