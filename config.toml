@@ -33,8 +33,10 @@ pygmentCodeFences = true
 #  src = "img/hexagon.jpg"
 #  desc = "Hexagon"
 
-[markup.goldmark.renderer]
-unsafe = true
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
 
 [Author]
   name = "Robin Černín"
