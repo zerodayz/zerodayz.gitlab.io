@@ -8,6 +8,8 @@ Recently I have started to study Python coding and subscribed myself to [Dailyco
 
 First day I have received a coding problem [Feb27_2019.py](https://gitlab.com/zerodayz/dailycoding/blob/master/Feb27_2019.py) that gives you a `list of integers` and number `k` as an input. You need to find whether any two numbers from the `list` add up to `k`.
 
+<!--more-->
+
 The first solution that came to my mind was using `double for-loop`, which iterates over each element in the given `list` and tries to `sum` the two values to see if they add up to `k`:
 
 ## Double for-loop
