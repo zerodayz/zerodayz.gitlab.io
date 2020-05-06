@@ -10,6 +10,7 @@ Memsource CLI is a framework to help with automation of Memsource related tasks.
 
 Please if you have any idea on any improvements please do not hesitate to open an [issue](https://github.com/unofficial-memsource/memsource-cli-client/issues).
 
+<!--more-->
 
 ## Get the code and stay updated:
 
