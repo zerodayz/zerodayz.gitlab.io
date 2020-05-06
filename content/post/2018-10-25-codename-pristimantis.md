@@ -8,6 +8,8 @@ You might be already aware of the other project I am working on [Citellus](https
 
 Since I am working with [OpenStack](https://www.openstack.org) the most, most of the playbooks are made for [OpenStack](https://www.openstack.org).  
 
+<!--more-->
+
 Before we start we need to prepare the environment, usually undercloud but it can be any host that has access to your overcloud nodes.
 
 ## Preparing the environment:
