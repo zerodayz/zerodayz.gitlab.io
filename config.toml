@@ -45,7 +45,7 @@ pygmentCodeFences = true
 
 [[menu.main]]
     name = "Blog"
-    url = ""
+    url = "post/"
     weight = 1
 
 [[menu.main]]
