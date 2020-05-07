@@ -17,4 +17,4 @@ Now even the Memsource official blog mentions Memsource CLI [https://www.memsour
 Currently there are two active developers @Ludek Janda and me. 
 
 
-For more information please visit official website of the project [http://www.memsource-cli.org](memsource-cli.org)
+For more information please visit official website of the project [http://www.memsource-cli.org](http://www.memsource-cli.org)
